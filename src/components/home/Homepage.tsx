@@ -26292,7 +26292,6 @@
 
 
 
-
 import Storytelling from "@/pages/Storytelling";
 import { Compass, Shield, Cpu, Award, ArrowRight, Star, Sparkles, Menu, X, ChevronDown, Rocket, Target, Heart, Network, Lock, Database, Cloud, Users, Globe, Clock, Phone, Mail, MapPin, Linkedin, Twitter, Facebook, Zap, Infinity, Building2, Lightbulb, Headphones, BarChart3, Quote, Activity, Wifi, Gem, Crown, Orbit, CheckCircle, Layers, ZapOff, Fingerprint, Eye, Code, Terminal, Server, HardDrive, Monitor, Smartphone, Tablet, Package, Briefcase, FileText, Calendar, TrendingDown, AlertCircle, CheckSquare, BriefcaseBusiness, GraduationCap, Home, Factory, School, Building, Hotel, UtensilsCrossed, Trophy, Medal, BadgeCheck, ShieldCheck, EyeOff, Video, Fence, Settings, Gauge, Boxes, Scale, TrendingUp as TrendingUpIcon, Users as UsersIcon, HeartHandshake, Lightbulb as LightbulbIcon, RefreshCw, Target as TargetIcon, Smile, HandshakeIcon, UserCheck, User, Truck, Wrench, Star as StarIcon, Settings2, ShoppingBag, UserCog, UserPlus, UserMinus, UserX, ThumbsUp, ThumbsDown, ClipboardList, HardHat, FileText as Drafting, DollarSign, Clock3, TrendingUp, ShieldAlert } from "lucide-react";
 import { useState, useEffect, useRef, useCallback } from "react";
@@ -26952,7 +26951,7 @@ export default function HomePage() {
       return relativeTop;
     }
     // Fallback calculation if positions aren't ready
-    return 80 + (index * 280);
+    return 80 + (index * 360);
   };
   
   // Generate S-shaped SVG path for all timeline items
@@ -26960,7 +26959,7 @@ export default function HomePage() {
     let path = "M110 0 ";
     const segmentHeight = 360;
     // Add more segments to ensure the path extends to the bottom
-    const totalSegments = Math.ceil(steps.length / 2) + 4; // Increased from +2 to +4
+    const totalSegments = Math.ceil(steps.length / 2) + 4;
     
     // Create a true S-shaped curve
     for (let i = 0; i < totalSegments; i++) {
@@ -27004,9 +27003,9 @@ export default function HomePage() {
             <span className="text-xs sm:text-sm font-semibold tracking-[0.2em] sm:tracking-[0.3em] text-gray-800 uppercase mb-2 sm:mb-4 block">
               User Personas
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
               Understanding{" "}
-              <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent block sm:inline">
+              <span className="bg-gradient-to-r from-pink-600 via-orange-600 via-yellow-600 via-green-600 via-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent block sm:inline">
                 Key Stakeholders
               </span>
             </h2>
@@ -27022,7 +27021,7 @@ export default function HomePage() {
                 className="absolute top-0 left-0 w-full h-full"
                 viewBox="0 0 220 100%"
                 preserveAspectRatio="none"
-                style={{ minHeight: `${steps.length * 400}px` }}
+                style={{ minHeight: `${steps.length * 360 + 100}px` }}
               >
                 <defs>
                   <linearGradient id="gradientLine" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -27032,6 +27031,16 @@ export default function HomePage() {
                     <stop offset="60%" stopColor="#22C55E" />
                     <stop offset="80%" stopColor="#3B82F6" />
                     <stop offset="100%" stopColor="#A855F7" />
+                  </linearGradient>
+                  
+                  <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#EC4899" />
+                    <stop offset="17%" stopColor="#F97316" />
+                    <stop offset="33%" stopColor="#EAB308" />
+                    <stop offset="50%" stopColor="#22C55E" />
+                    <stop offset="67%" stopColor="#3B82F6" />
+                    <stop offset="83%" stopColor="#A855F7" />
+                    <stop offset="100%" stopColor="#EC4899" />
                   </linearGradient>
                   
                   <filter id="glow">
@@ -27360,8 +27369,8 @@ export default function HomePage() {
               }}
             />
             <div className="relative z-10 py-12 md:py-16 px-6 md:px-12 text-center text-white">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Understand Your Key Stakeholders Better?
+              <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ background: 'linear-gradient(90deg, #EC4899, #F97316, #EAB308, #22C55E, #3B82F6, #A855F7, #EC4899)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                Customer Centricity with Peace of Mind
               </h2>
               <p className="text-lg opacity-95 mb-8 max-w-2xl mx-auto">
                 Let's help you navigate the complex B2B buying journey with tailored solutions for each persona.
